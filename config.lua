@@ -1,7 +1,7 @@
 Config = {}
 
--- Are you using ESX? Turn this to true if you would like fuel & jerry cans to cost something.
-Config.UseESX = true
+-- Are you using Andyyy7666 Currency System? Turn this to true if you would like fuel & jerry cans to cost something.
+Config.AndyyyCurrencySystem = false
 
 -- What should the price of jerry cans be?
 Config.JerryCanCost = 100
@@ -13,7 +13,7 @@ Config.FuelDecor = "_FUEL_LEVEL"
 -- What keys are disabled while you're fueling.
 Config.DisableKeys = {0, 22, 23, 24, 29, 30, 31, 37, 44, 56, 82, 140, 166, 167, 168, 170, 288, 289, 311, 323}
 
--- Want to use the HUD? Turn this to true.
+-- If you wan't to use the hud, or fuel bar then turn this to true.
 Config.EnableHUD = true
 
 -- Configure blips here. Turn both to false to disable blips all together.
@@ -21,7 +21,7 @@ Config.ShowNearestGasStationOnly = true
 Config.ShowAllGasStations = false
 
 -- Modify the fuel-cost here, using a multiplier value. Setting the value to 2.0 would cause a doubled increase.
-Config.CostMultiplier = 1.0
+Config.CostMultiplier = 1.4
 
 -- Configure the strings as you wish here.
 Config.Strings = {
@@ -39,7 +39,7 @@ Config.Strings = {
 	TotalCost = "Cost",
 }
 
-if not Config.UseESX then
+if not Config.AndyyyCurrencySystem then
 	Config.Strings.PurchaseJerryCan = "Press ~g~E ~w~to grab a jerry can"
 	Config.Strings.RefillJerryCan = "Press ~g~E ~w~ to refill the jerry can"
 end
@@ -56,8 +56,22 @@ Config.PumpModels = {
 
 -- Blacklist certain vehicles. Use names or hashes. https://wiki.gtanet.work/index.php?title=Vehicle_Models
 Config.Blacklist = {
-	--"Adder",
-	--276773164
+	"Imorgon",
+	"Neon",
+	"Raiden",
+	"Cyclone",
+	"Voltic",
+	"Voltic2",
+	"Tezeract",
+	"Dilettante",
+	"Dilettante2",
+	"Airtug",
+	"Caddy",
+	"Caddy2",
+	"Caddy3",
+	"Surge",
+	"Khamelion",
+	"RC Bandito",
 }
 
 -- Do you want the HUD removed from showing in blacklisted vehicles?
@@ -91,16 +105,16 @@ Config.Classes = {
 
 -- The left part is at percentage RPM, and the right is how much fuel (divided by 10) you want to remove from the tank every second
 Config.FuelUsage = {
-	[1.0] = 1.4,
-	[0.9] = 1.2,
-	[0.8] = 1.0,
-	[0.7] = 0.9,
-	[0.6] = 0.8,
-	[0.5] = 0.7,
-	[0.4] = 0.5,
+	[1.0] = 1.5,
+	[0.9] = 1.3,
+	[0.8] = 1.15,
+	[0.7] = 0.95,
+	[0.6] = 0.85,
+	[0.5] = 0.75,
+	[0.4] = 0.6,
 	[0.3] = 0.4,
-	[0.2] = 0.2,
-	[0.1] = 0.1,
+	[0.2] = 0.25,
+	[0.1] = 0.15,
 	[0.0] = 0.0,
 }
 
