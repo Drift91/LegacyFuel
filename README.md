@@ -1,4 +1,11 @@
-### About
+# About Fork:
+This edit of Legacy fuel is to support the [money system](https://github.com/Andyyy7666/Currency-System), as well as a couple more features like adding a nozle to the players hand when refueling and a changed the hud to a bar instead of a number. View pictures below
+
+![Nozle](https://user-images.githubusercontent.com/86536434/139972186-a9871d8f-4905-43f2-88d1-09a39b078d45.png)
+![Fuelbar HUD](https://user-images.githubusercontent.com/86536434/139972204-53da3e11-0b31-491b-9890-b9467f371746.png)
+
+
+### About original Legacy Fuel
 Started off as my first script, and for whatever reason, I decided to release it. As it was pretty badly created, I felt like I should rewrite it and make a better version, so ended up spending a few hours doing so.
 
 ### Installation
