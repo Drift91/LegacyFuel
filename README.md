@@ -4,6 +4,9 @@ This edit of Legacy fuel is to support the [money system](https://github.com/And
 ![Nozle](https://user-images.githubusercontent.com/86536434/139972186-a9871d8f-4905-43f2-88d1-09a39b078d45.png)
 ![Fuelbar HUD](https://user-images.githubusercontent.com/86536434/139972204-53da3e11-0b31-491b-9890-b9467f371746.png)
 
+# Need Support?
+[![Need Support?](https://i.imgur.com/fqKYWeV.png)](https://discord.gg/Z9Mxu72zZ6)
+
 
 ### About original Legacy Fuel
 Started off as my first script, and for whatever reason, I decided to release it. As it was pretty badly created, I felt like I should rewrite it and make a better version, so ended up spending a few hours doing so.
