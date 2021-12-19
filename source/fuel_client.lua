@@ -111,7 +111,10 @@ AddEventHandler('fuel:startFuelUpTick', function(pumpObject, ped, vehicle)
 		local extraCost = fuelToAdd / 1.5 * Config.CostMultiplier
 
 		if not pumpObject then
-			if GetAmmoInPedWeapon(ped, 883325847) - fuelToAdd * 100 >= 0 then
+			if Config.UnlimitedJerryCan then
+				currentFuel = oldFuel + fuelToAdd
+
+			elseif GetAmmoInPedWeapon(ped, 883325847) - fuelToAdd * 100 >= 0 then
 				currentFuel = oldFuel + fuelToAdd
 
 				SetPedAmmo(ped, 883325847, math.floor(GetAmmoInPedWeapon(ped, 883325847) - fuelToAdd * 100))
@@ -169,6 +172,8 @@ AddEventHandler('fuel:refuelFromPump', function(pumpObject, ped, vehicle)
 
 			DrawText3Ds(stringCoords.x, stringCoords.y, stringCoords.z + 1.2, Config.Strings.CancelFuelingPump .. extraString)
 			DrawText3Ds(vehicleCoords.x, vehicleCoords.y, vehicleCoords.z + 0.5, Round(currentFuel, 1) .. "%")
+		elseif Config.UnlimitedJerryCan then
+			DrawText3Ds(vehicleCoords.x, vehicleCoords.y, vehicleCoords.z + 0.5, Config.Strings.CancelFuelingJerryCan .. "\n" .. Round(currentFuel, 1) .. "%")
 		else
 			DrawText3Ds(vehicleCoords.x, vehicleCoords.y, vehicleCoords.z + 0.5, Config.Strings.CancelFuelingJerryCan .. "\nGas can: ~g~" .. Round(GetAmmoInPedWeapon(ped, 883325847) / 4500 * 100, 1) .. "%~w~ | Vehicle: ~g~" .. Round(currentFuel, 1) .. "%")
 		end

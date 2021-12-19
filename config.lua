@@ -123,6 +123,9 @@ Config.FuelUsage = {
 	[0.0] = 0.0,
 }
 
+-- To make jerry cans contain unlimited free fuel set this to true.
+Config.UnlimitedJerryCan = false
+
 Config.GasStations = {
 	vector3(49.4187, 2778.793, 58.043),
 	vector3(263.894, 2606.463, 44.983),
