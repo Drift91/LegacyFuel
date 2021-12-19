@@ -95,7 +95,7 @@ Citizen.CreateThread(function()
 		else
 			isNearPump = false
 
-			Citizen.Wait(math.ceil(pumpDistance * 20))
+			Citizen.Wait(1000)
 		end
 	end
 end)
