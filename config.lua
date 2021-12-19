@@ -123,6 +123,9 @@ Config.FuelUsage = {
 	[0.0] = 0.0,
 }
 
+-- The rate at which fuel flows (divided by 10) from the pump or jerry can every second.
+Config.RefuelRate = 1
+
 -- To make jerry cans contain unlimited free fuel set this to true.
 Config.UnlimitedJerryCan = false
 
