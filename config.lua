@@ -76,6 +76,15 @@ Config.Blacklist = {
 	--276773164
 }
 
+-- Blacklist entire vehicle classes. https://docs.fivem.net/natives/?_0x29439776AAA00A62
+Config.ClassBlacklist = {
+	13, -- Cycles
+	--14, -- Boats
+	--15, -- Helicopters
+	--16, -- Planes
+	21, -- Trains
+}
+
 -- Do you want the HUD removed from showing in blacklisted vehicles?
 Config.RemoveHUDForBlacklistedVehicle = true
 

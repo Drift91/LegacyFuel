@@ -45,6 +45,10 @@ Citizen.CreateThread(function()
 		table.remove(Config.Blacklist, index)
 	end
 
+	for index = 1, #Config.ClassBlacklist do
+		Config.ClassBlacklist[Config.ClassBlacklist[index]] = true
+	end
+
 	while true do
 		Citizen.Wait(1000)
 
@@ -53,7 +57,7 @@ Citizen.CreateThread(function()
 		if IsPedInAnyVehicle(ped) then
 			local vehicle = GetVehiclePedIsIn(ped)
 
-			if Config.Blacklist[GetEntityModel(vehicle)] then
+			if Config.Blacklist[GetEntityModel(vehicle)] or Config.ClassBlacklist[GetVehicleClass(vehicle)] then
 				inBlacklisted = true
 			else
 				inBlacklisted = false
