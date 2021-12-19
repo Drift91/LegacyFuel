@@ -356,6 +356,17 @@ if Config.EnableHUD then
 	local kmh = 0
 	local fuel = 0
 	local displayHud = false
+	local color = Config.ColorHUD
+	local colorLowFuel = Config.ColorLowFuel
+
+	Citizen.CreateThread(function()
+		while true do
+			colorLowFuel = Config.ColorLowFuel
+			Citizen.Wait(500)
+			colorLowFuel = Config.ColorHUD
+			Citizen.Wait(500)
+		end
+	end)
 
 	local x = 0.01135
 	local y = 0.002
@@ -368,9 +379,16 @@ if Config.EnableHUD then
 				local vehicle = GetVehiclePedIsIn(ped)
 				local speed = GetEntitySpeed(vehicle)
 
+				fuelNum = GetFuel(vehicle)
 				mph = tostring(math.ceil(speed * 2.236936))
 				kmh = tostring(math.ceil(speed * 3.6))
-				fuel = tostring(math.ceil(GetFuel(vehicle)))
+				fuel = tostring(math.ceil(fuelNum))
+
+				if fuelNum >= Config.LowFuelLevel then
+					color = Config.ColorHUD
+				else
+					color = colorLowFuel
+				end
 
 				displayHud = true
 			else
@@ -388,13 +406,13 @@ if Config.EnableHUD then
 			if displayHud then
 				
 				if Config.EnableSpeedHUD then
-					DrawAdvancedText(0.130 - Config.x, 0.77 - Config.y, 0.005, 0.0028, 0.6, mph, 255, 255, 255, 255, 6, 1)
-					DrawAdvancedText(0.174 - Config.x, 0.77 - Config.y, 0.005, 0.0028, 0.6, kmh, 255, 255, 255, 255, 6, 1)
-					DrawAdvancedText(0.148 - Config.x, 0.7765 - Config.y, 0.005, 0.0028, 0.4, "mp/h              km/h", 255, 255, 255, 255, 6, 1)
+					DrawAdvancedText(0.130 - Config.x, 0.77 - Config.y, 0.005, 0.0028, 0.6, mph, Config.ColorHUD.r, Config.ColorHUD.g, Config.ColorHUD.b, Config.ColorHUD.a, 6, 1)
+					DrawAdvancedText(0.174 - Config.x, 0.77 - Config.y, 0.005, 0.0028, 0.6, kmh, Config.ColorHUD.r, Config.ColorHUD.g, Config.ColorHUD.b, Config.ColorHUD.a, 6, 1)
+					DrawAdvancedText(0.148 - Config.x, 0.7765 - Config.y, 0.005, 0.0028, 0.4, "mp/h              km/h", Config.ColorHUD.r, Config.ColorHUD.g, Config.ColorHUD.b, Config.ColorHUD.a, 6, 1)
 				end
 
-				DrawAdvancedText(0.2195 - Config.x, 0.77 - Config.y, 0.005, 0.0028, 0.6, fuel, 255, 255, 255, 255, 6, 1)
-				DrawAdvancedText(0.2397 - Config.x, 0.7766 - Config.y, 0.005, 0.0028, 0.4, "Fuel", 255, 255, 255, 255, 6, 1)
+				DrawAdvancedText(0.2195 - Config.x, 0.77 - Config.y, 0.005, 0.0028, 0.6, fuel, color.r, color.g, color.b, color.a, 6, 1)
+				DrawAdvancedText(0.2397 - Config.x, 0.7766 - Config.y, 0.005, 0.0028, 0.4, "Fuel", color.r, color.g, color.b, color.a, 6, 1)
 				
 			else
 				Citizen.Wait(750)

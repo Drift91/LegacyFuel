@@ -19,6 +19,15 @@ Config.EnableHUD = true
 -- Want the HUD to show your speed? Turn this to true.
 Config.EnableSpeedHUD = true
 
+-- The percentage of fuel below which the HUD blinks between the below colors.
+Config.LowFuelLevel = 15
+
+-- Set the color of the HUD.
+Config.ColorHUD = {r = 255, g = 255, b = 255, a = 255}
+
+-- Set the color of the fuel section of the hud when you're low on fuel.
+Config.ColorLowFuel = {r = 255, g = 50, b = 50, a = 255}
+
 -- Use this to adjust the position of the HUD.
 Config.x = -0.0375
 Config.y = -0.0500
