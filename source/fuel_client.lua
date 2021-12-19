@@ -364,7 +364,7 @@ if Config.EnableHUD then
 		while true do
 			local ped = PlayerPedId()
 
-			if IsPedInAnyVehicle(ped) and not (Config.RemoveHUDForBlacklistedVehicle and inBlacklisted) then
+			if IsPedInAnyVehicle(ped) and not (Config.RemoveHUDForBlacklistedVehicle and inBlacklisted) and not IsHudHidden() then
 				local vehicle = GetVehiclePedIsIn(ped)
 				local speed = GetEntitySpeed(vehicle)
 
