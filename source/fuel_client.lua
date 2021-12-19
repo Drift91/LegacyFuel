@@ -377,9 +377,6 @@ if Config.EnableHUD then
 		end
 	end)
 
-	local x = 0.01135
-	local y = 0.002
-
 	Citizen.CreateThread(function()
 		while true do
 			local ped = PlayerPedId()
