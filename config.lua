@@ -70,6 +70,9 @@ Config.Blacklist = {
 -- Do you want the HUD removed from showing in blacklisted vehicles?
 Config.RemoveHUDForBlacklistedVehicle = true
 
+-- Overall multiplier. This value multiplies the two arrays below.
+Config.FuelUsageOverall = 1
+
 -- Class multipliers. If you want SUVs to use less fuel, you can change it to anything under 1.0, and vise versa.
 Config.Classes = {
 	[0] = 1.0, -- Compacts
