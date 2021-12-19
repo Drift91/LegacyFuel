@@ -16,6 +16,13 @@ Config.DisableKeys = {0, 22, 23, 24, 29, 30, 31, 37, 44, 56, 82, 140, 166, 167, 
 -- Want to use the HUD? Turn this to true.
 Config.EnableHUD = true
 
+-- Want the HUD to show your speed? Turn this to true.
+Config.EnableSpeedHUD = true
+
+-- Use this to adjust the position of the HUD.
+Config.x = -0.0375
+Config.y = -0.0500
+
 -- Configure blips here. Turn both to false to disable blips all together.
 Config.ShowNearestGasStationOnly = true
 Config.ShowAllGasStations = false

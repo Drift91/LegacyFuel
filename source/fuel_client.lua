@@ -386,10 +386,16 @@ if Config.EnableHUD then
 	Citizen.CreateThread(function()
 		while true do
 			if displayHud then
-				DrawAdvancedText(0.130 - x, 0.77 - y, 0.005, 0.0028, 0.6, mph, 255, 255, 255, 255, 6, 1)
-				DrawAdvancedText(0.174 - x, 0.77 - y, 0.005, 0.0028, 0.6, kmh, 255, 255, 255, 255, 6, 1)
-				DrawAdvancedText(0.2195 - x, 0.77 - y, 0.005, 0.0028, 0.6, fuel, 255, 255, 255, 255, 6, 1)
-				DrawAdvancedText(0.148 - x, 0.7765 - y, 0.005, 0.0028, 0.4, "mp/h              km/h              Fuel", 255, 255, 255, 255, 6, 1)
+				
+				if Config.EnableSpeedHUD then
+					DrawAdvancedText(0.130 - Config.x, 0.77 - Config.y, 0.005, 0.0028, 0.6, mph, 255, 255, 255, 255, 6, 1)
+					DrawAdvancedText(0.174 - Config.x, 0.77 - Config.y, 0.005, 0.0028, 0.6, kmh, 255, 255, 255, 255, 6, 1)
+					DrawAdvancedText(0.148 - Config.x, 0.7765 - Config.y, 0.005, 0.0028, 0.4, "mp/h              km/h", 255, 255, 255, 255, 6, 1)
+				end
+
+				DrawAdvancedText(0.2195 - Config.x, 0.77 - Config.y, 0.005, 0.0028, 0.6, fuel, 255, 255, 255, 255, 6, 1)
+				DrawAdvancedText(0.2397 - Config.x, 0.7766 - Config.y, 0.005, 0.0028, 0.4, "Fuel", 255, 255, 255, 255, 6, 1)
+				
 			else
 				Citizen.Wait(750)
 			end
