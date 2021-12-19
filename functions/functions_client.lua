@@ -3,9 +3,9 @@ function GetFuel(vehicle)
 end
 
 function SetFuel(vehicle, fuel)
-	if type(fuel) == 'number' and fuel >= 0 and fuel <= 100 then
-		SetVehicleFuelLevel(vehicle, fuel + 0.0)
-		DecorSetFloat(vehicle, Config.FuelDecor, GetVehicleFuelLevel(vehicle))
+	if type(fuel) == 'number' then
+		fuel = math.max(0, math.min(100, fuel))
+		DecorSetFloat(vehicle, Config.FuelDecor, fuel + 0.0)
 	end
 end
 

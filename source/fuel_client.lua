@@ -26,7 +26,7 @@ function ManageFuelUsage(vehicle)
 	end
 
 	if IsVehicleEngineOn(vehicle) then
-		SetFuel(vehicle, GetVehicleFuelLevel(vehicle) - Config.FuelUsage[Round(GetVehicleCurrentRpm(vehicle), 1)] * (Config.Classes[GetVehicleClass(vehicle)] or 1.0) / 10)
+		SetFuel(vehicle, GetFuel(vehicle) - Config.FuelUsage[Round(GetVehicleCurrentRpm(vehicle), 1)] * (Config.Classes[GetVehicleClass(vehicle)] or 1.0) / 10)
 	end
 end
 
@@ -101,7 +101,7 @@ Citizen.CreateThread(function()
 end)
 
 AddEventHandler('fuel:startFuelUpTick', function(pumpObject, ped, vehicle)
-	currentFuel = GetVehicleFuelLevel(vehicle)
+	currentFuel = GetFuel(vehicle)
 
 	while isFueling do
 		Citizen.Wait(500)
@@ -214,7 +214,7 @@ Citizen.CreateThread(function()
 							end
 						end
 
-						if GetVehicleFuelLevel(vehicle) < 95 and canFuel then
+						if GetFuel(vehicle) < 95 and canFuel then
 							if currentCash > 0 then
 								DrawText3Ds(stringCoords.x, stringCoords.y, stringCoords.z + 1.2, Config.Strings.EToRefuel)
 
@@ -370,7 +370,7 @@ if Config.EnableHUD then
 
 				mph = tostring(math.ceil(speed * 2.236936))
 				kmh = tostring(math.ceil(speed * 3.6))
-				fuel = tostring(math.ceil(GetVehicleFuelLevel(vehicle)))
+				fuel = tostring(math.ceil(GetFuel(vehicle)))
 
 				displayHud = true
 			else
@@ -398,3 +398,21 @@ if Config.EnableHUD then
 		end
 	end)
 end
+
+Citizen.CreateThread(function()
+	while true do
+
+		local ped = PlayerPedId()
+		if IsPedInAnyVehicle(ped) then
+
+			local vehicle = GetVehiclePedIsIn(ped)
+			if GetPedInVehicleSeat(vehicle, -1) == ped then
+
+				if GetFuel(vehicle) == 0.0 and DecorExistOn(vehicle, Config.FuelDecor) and GetIsVehicleEngineRunning(vehicle) then
+					SetVehicleEngineOn(vehicle, false, false, true)
+				end
+			end
+		end
+		Citizen.Wait(0)
+	end
+end)
