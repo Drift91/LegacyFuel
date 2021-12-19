@@ -80,7 +80,7 @@ Citizen.CreateThread(function()
 
 		local pumpObject, pumpDistance = FindNearestFuelPump()
 
-		if pumpDistance < 2.5 then
+		if pumpDistance < 3.5 then
 			isNearPump = pumpObject
 
 			if Config.UseESX then
