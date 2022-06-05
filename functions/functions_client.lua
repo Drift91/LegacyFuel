@@ -90,3 +90,7 @@ end
 function lerp(a, b, v)
 	return a + (b - a) * v
 end
+
+function clamp(low, high, v)
+	return math.min(math.max(v, low), high)
+end
