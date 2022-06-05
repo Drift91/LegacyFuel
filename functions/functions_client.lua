@@ -86,3 +86,7 @@ function FindNearestFuelPump()
 
 	return pumpObject, pumpDistance
 end
+
+function lerp(a, b, v)
+	return a + (b - a) * v
+end

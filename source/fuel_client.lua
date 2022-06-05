@@ -26,7 +26,7 @@ function ManageFuelUsage(vehicle)
 	end
 
 	if IsVehicleEngineOn(vehicle) then
-		SetFuel(vehicle, GetFuel(vehicle) - (Config.FuelUsageOverall or 1.0) * Config.FuelUsage[Round(GetVehicleCurrentRpm(vehicle), 1)] * (Config.Classes[GetVehicleClass(vehicle)] or 1.0) / 20)
+		SetFuel(vehicle, GetFuel(vehicle) - (Config.FuelUsageOverall or 1.0) * Config.FuelUsage[Round(GetVehicleCurrentRpm(vehicle), 1)] * lerp(clamp(0, 1, Config.FuelUsageIdle), 1, GetControlNormal(0, 71)) * (Config.Classes[GetVehicleClass(vehicle)] or 1.0) / 20)
 	end
 end
 
