@@ -412,13 +412,13 @@ if Config.EnableHUD then
 			if displayHud then
 				
 				if Config.EnableSpeedHUD then
-					DrawAdvancedText(0.130 - Config.x, 0.77 - Config.y, 0.005, 0.0028, 0.6, mph, Config.ColorHUD.r, Config.ColorHUD.g, Config.ColorHUD.b, Config.ColorHUD.a, 6, 1)
-					DrawAdvancedText(0.174 - Config.x, 0.77 - Config.y, 0.005, 0.0028, 0.6, kmh, Config.ColorHUD.r, Config.ColorHUD.g, Config.ColorHUD.b, Config.ColorHUD.a, 6, 1)
-					DrawAdvancedText(0.148 - Config.x, 0.7765 - Config.y, 0.005, 0.0028, 0.4, "mp/h              km/h", Config.ColorHUD.r, Config.ColorHUD.g, Config.ColorHUD.b, Config.ColorHUD.a, 6, 1)
+					DrawAdvancedText(0.130 - Config.HUD.x, 0.77 - Config.HUD.y, 0.005, 0.0028, 0.6, mph, Config.ColorHUD.r, Config.ColorHUD.g, Config.ColorHUD.b, Config.ColorHUD.a, 6, 1)
+					DrawAdvancedText(0.174 - Config.HUD.x, 0.77 - Config.HUD.y, 0.005, 0.0028, 0.6, kmh, Config.ColorHUD.r, Config.ColorHUD.g, Config.ColorHUD.b, Config.ColorHUD.a, 6, 1)
+					DrawAdvancedText(0.148 - Config.HUD.x, 0.7765 - Config.HUD.y, 0.005, 0.0028, 0.4, "mp/h              km/h", Config.ColorHUD.r, Config.ColorHUD.g, Config.ColorHUD.b, Config.ColorHUD.a, 6, 1)
 				end
 
-				DrawAdvancedText(0.2195 - Config.x, 0.77 - Config.y, 0.005, 0.0028, 0.6, fuel, color.r, color.g, color.b, color.a, 6, 1)
-				DrawAdvancedText(0.2397 - Config.x, 0.7766 - Config.y, 0.005, 0.0028, 0.4, "Fuel", color.r, color.g, color.b, color.a, 6, 1)
+				DrawAdvancedText(0.2195 - Config.HUD.x, 0.77 - Config.HUD.y, 0.005, 0.0028, 0.6, fuel, color.r, color.g, color.b, color.a, 6, 1)
+				DrawAdvancedText(0.2397 - Config.HUD.x, 0.7766 - Config.HUD.y, 0.005, 0.0028, 0.4, "Fuel", color.r, color.g, color.b, color.a, 6, 1)
 				
 			else
 				Citizen.Wait(750)
