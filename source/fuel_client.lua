@@ -111,7 +111,7 @@ AddEventHandler('fuel:startFuelUpTick', function(pumpObject, ped, vehicle)
 		Citizen.Wait(500)
 
 		local oldFuel = DecorGetFloat(vehicle, Config.FuelDecor)
-		local fuelToAdd = math.random(10, 20) * Config.RefuelRate / 10.0
+		local fuelToAdd = math.random(18, 20) * Config.RefuelRate / 10.0
 		local extraCost = fuelToAdd / 1.5 * Config.CostMultiplier
 
 		if not pumpObject then
