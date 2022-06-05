@@ -29,8 +29,8 @@ Config.ColorHUD = {r = 255, g = 255, b = 255, a = 255}
 Config.ColorLowFuel = {r = 255, g = 50, b = 50, a = 255}
 
 -- Use this to adjust the position of the HUD.
-Config.x = 0.01135
-Config.y = 0.002
+Config.HUDx = 0.01135
+Config.HUDy = 0.002
 
 -- Configure blips here. Turn both to false to disable blips all together.
 Config.ShowNearestGasStationOnly = true
