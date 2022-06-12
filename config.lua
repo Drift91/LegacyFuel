@@ -132,9 +132,6 @@ Config.FuelUsage = {
 	[0.0] = 0.0,
 }
 
--- Idle multiplier. This value affects how much fuel is consumed when idling without the accelerator pressed. Range is 0 to 1.
-Config.FuelUsageIdle = 0.15
-
 -- The rate at which fuel flows (divided by 10) from the pump or jerry can every second.
 Config.RefuelRate = 1
 
