@@ -33,22 +33,6 @@ end
 Citizen.CreateThread(function()
 	DecorRegister(Config.FuelDecor, 1)
 
-	for index = 1, #Config.Blacklist do
-		if type(Config.Blacklist[index]) == 'string' then
-			Config.Blacklist[GetHashKey(Config.Blacklist[index])] = true
-		else
-			Config.Blacklist[Config.Blacklist[index]] = true
-		end
-	end
-
-	for index = #Config.Blacklist, 1, -1 do
-		table.remove(Config.Blacklist, index)
-	end
-
-	for index = 1, #Config.ClassBlacklist do
-		Config.ClassBlacklist[Config.ClassBlacklist[index]] = true
-	end
-
 	while true do
 		Citizen.Wait(1000)
 
@@ -57,7 +41,7 @@ Citizen.CreateThread(function()
 		if IsPedInAnyVehicle(ped) then
 			local vehicle = GetVehiclePedIsIn(ped)
 
-			if Config.Blacklist[GetEntityModel(vehicle)] or Config.ClassBlacklist[GetVehicleClass(vehicle)] then
+			if TableContains(Config.Blacklist, GetEntityModel(vehicle)) or TableContains(Config.ClassBlacklist, GetVehicleClass(vehicle)) then
 				inBlacklisted = true
 			else
 				inBlacklisted = false
