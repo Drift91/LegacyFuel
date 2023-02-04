@@ -70,10 +70,10 @@ Config.PumpModels = {
 	[-164877493] = true
 }
 
--- Blacklist certain vehicles. Use names or hashes. https://wiki.gtanet.work/index.php?title=Vehicle_Models
+-- Blacklist certain vehicles. Use names only. Be sure to use ` backticks and not quotes. https://wiki.gtanet.work/index.php?title=Vehicle_Models
 Config.Blacklist = {
-	--"Adder",
-	--276773164
+	--`Adder`,
+	--`dilettante`,
 }
 
 -- Blacklist entire vehicle classes. https://docs.fivem.net/natives/?_0x29439776AAA00A62
