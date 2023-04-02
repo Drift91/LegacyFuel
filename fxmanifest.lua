@@ -1,9 +1,9 @@
 fx_version 'cerulean'
 game 'gta5'
 
-author 'InZidiuZ'
-description 'Legacy Fuel'
-version '1.3'
+author 'InZidiuZ & Drift_91'
+description 'Legacy Fuel Edit'
+version '2.0'
 
 -- What to run
 client_scripts {
@@ -21,3 +21,5 @@ exports {
 	'GetFuel',
 	'SetFuel'
 }
+
+provide 'LegacyFuel'
